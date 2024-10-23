@@ -79,3 +79,8 @@ body {
     transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+    #proceedBtn{
+        margin-top: 1rem;
+    }
+}

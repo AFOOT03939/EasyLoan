@@ -178,9 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLoanTermLimits();
     validateLoanAmount();
 
-    const confirmBtn = document.getElementById('confirm');
+
+    const confirmBtn = document.getElementById('confirmBtn');
 
     confirmBtn.addEventListener('click', function() {
+        
         // Promesa para esperar a que termAmount tenga un valor definido
         new Promise((resolve) => {
             if (termAmount && finalAmount) {
@@ -198,7 +200,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const amount = loanAmountInput.value;
             const frequency = selectElement.value;
             const term = loanTermInput.value;
+            // creación del botón de continuar
             const container = document.getElementById('results-container');
+            let proceedContainer = document.getElementById('proceed');
+            proceedContainer.innerHTML += `<button type="submit" id="proceedBtn" class="btn btn-success btn-lg">Continuar</button>`;
+            let proceedBtn = document.getElementById('proceedBtn');
+            proceedBtn.addEventListener('click', function() {
+                new Promise((resolve) => {
+                    if (proceedContainer) {
+                        resolve();
+                    } else {
+                        // Si termAmount no está definido, espera un momento y verifica nuevamente para continuar
+                        const interval = setInterval(() => {
+                            if (proceedContainer) {
+                                clearInterval(interval);
+                                resolve();
+                            }
+                        }, 100); // Comprueba cada 100 ms
+                    }
+                }).then(() => {
+                    container.scrollIntoView({ behavior: 'smooth' });
+                });
+            })
             container.innerHTML = `
             <div class="card shadow">
                 <div class="card-body">
@@ -240,12 +263,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <button id="accept-loan" class="btn btn-primary btn-lg">Aceptar préstamo</button>
+                    <button id="accept-loan" class="btn btn-primary btn-lg w-100">Aceptar préstamo</button>
                 </div>
                 </div>
             </div>
             `;
+        const acceptLoanBtn = document.getElementById('accept-loan');
+        acceptLoanBtn.addEventListener('click', function() {
+            alert('Préstamo aceptado');
         });
     });
-
+});
 });
