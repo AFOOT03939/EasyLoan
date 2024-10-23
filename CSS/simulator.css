@@ -1,0 +1,51 @@
+:root {
+    --bs-primary: rgb(34, 54, 87);
+    --bs-primary-rgb: 44, 62, 80;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-brand {
+    font-weight: 700;
+}
+.nav-link {
+    font-weight: 400;
+}
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+.btn-primary {
+    background-color: rgb(24, 73, 150);
+    border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-primary:active {
+    background-color: rgb(34, 60, 87); /* Verde aún más oscuro */
+  }
+.border-primary {
+    border-color: #2C3E50 !important;
+}
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #0056b3;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
