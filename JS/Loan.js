@@ -205,6 +205,23 @@ document.addEventListener('DOMContentLoaded', function() {
             let proceedContainer = document.getElementById('proceed');
             proceedContainer.innerHTML += `<button type="submit" id="proceedBtn" class="btn btn-success btn-lg">Continuar</button>`;
             let proceedBtn = document.getElementById('proceedBtn');
+
+            function adjustBtn() {
+                if (window.innerWidth < 768) {
+                    proceedBtn.classList.add("w-100");
+                    startTutorialBtn.classList.add("w-100");
+
+                }else{
+                    proceedBtn.classList.remove("w-100");
+                    startTutorialBtn.classList.remove("w-100");
+
+                }
+                }
+    
+                // Llamamos al cargar la página y en cada cambio de tamaño
+                window.addEventListener("resize", adjustBtn);
+                adjustBtn();
+
             proceedBtn.addEventListener('click', function() {
                 new Promise((resolve) => {
                     if (proceedContainer) {
@@ -268,10 +285,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             `;
-        const acceptLoanBtn = document.getElementById('accept-loan');
-        acceptLoanBtn.addEventListener('click', function() {
-            alert('Préstamo aceptado');
         });
     });
-});
 });
