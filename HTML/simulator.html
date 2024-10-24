@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../CSS/simulator.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html"><i class="bi bi-currency-exchange me-2"></i>EasyLoan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Loan.html">Préstamos</a>
+                        <a class="nav-link" href="simulator.html">Simulador</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Perfil</a>
@@ -31,16 +31,15 @@
             </div>
         </div>
     </nav>
+    <br>
 
     <div class="container mt-5 pt-5">
-        <h1 class="d-flex text-center justify-content-center section-title mb-4">Simulación de pago</h1>
-        <div class="row">
-            <div class="col-md-5 mb-4">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="card-title mb-0">Detalles del Préstamo</h5>
-                    </div>
+        <h1 class="text-center mb-5">Simulación de Pago</h1>
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <h5 class="card-title mb-4">Detalles del Préstamo</h5>
                         <form id="loanForm">
                             <div class="mb-3">
                                 <label for="loanAmount" class="form-label">Monto del Préstamo ($)</label>
@@ -62,31 +61,27 @@
                                     <option value="weekly">Semanal</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simular Préstamo</button>
+                            <button type="submit" class="btn btn-primary w-100">Simular Préstamo</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="card-title mb-0">Resumen del Préstamo</h5>
-                    </div>
+            <div class="col-md-7">
+                <div class="card shadow-sm h-100">
                     <div class="card-body">
+                        <h5 class="card-title mb-4">Resumen del Préstamo</h5>
                         <div id="loanSummary" class="fs-5"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-12">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="card-title mb-0">Plan de Pagos</h5>
-                    </div>
+                <div class="card shadow-sm">
                     <div class="card-body">
+                        <h5 class="card-title mb-4">Plan de Pagos</h5>
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>N° Pago</th>
@@ -106,10 +101,10 @@
         </div>
         <div class="row mt-4">
             <div class="col-12">
-                <div class="card shadow border-start border-primary border-5">
+                <div class="card shadow-sm">
                     <div class="card-body">
-                        <h4>Explicación del Plan de Pagos</h4>
-                        <p><strong>Cálculo del Plan de Pagos:</strong> El cálculo que determina la cantidad del pago de cada plazo se obtiene mediante una fórmula estandar para la mayoría de organizaciones. Para simplificar: cada mes, pagas intereses sobre el capital restante y una parte del capital. Pagas la misma cantidad cada mes, pero al principio, una mayor parte de tu pago va a los intereses. Con el tiempo, más de tu pago va al capital.</p>
+                        <h5 class="card-title mb-4">Explicación del Plan de Pagos</h5>
+                        <p><strong>Cálculo del Plan de Pagos:</strong> El cálculo que determina la cantidad del pago de cada plazo se obtiene mediante una fórmula estándar para la mayoría de organizaciones. Para simplificar: cada mes, pagas intereses sobre el capital restante y una parte del capital. Pagas la misma cantidad cada mes, pero al principio, una mayor parte de tu pago va a los intereses. Con el tiempo, más de tu pago va al capital.</p>
                         <p><strong>Columna Principal:</strong> Esta columna muestra la cantidad de dinero que se aplica directamente a la reducción del saldo del préstamo en cada pago. Al principio del préstamo, esta cantidad es menor porque una mayor parte del pago se destina a los intereses. A medida que avanza el tiempo, la porción del pago que se aplica al principal aumenta.</p>
                         <p><strong>Columna Interés:</strong> Esta columna indica la cantidad de dinero que se paga en concepto de intereses en cada cuota. El interés se calcula sobre el saldo pendiente del préstamo. Por lo tanto, al principio del préstamo, cuando el saldo es mayor, se paga más en intereses. A medida que el saldo disminuye, la cantidad de interés también disminuye.</p>
                         <p><strong>Columna Balance:</strong> Esta columna muestra el saldo pendiente del préstamo después de cada pago. Comienza con el monto total del préstamo y disminuye con cada pago realizado. La reducción del balance en cada pago es igual a la cantidad aplicada al principal en ese pago.</p>
@@ -118,7 +113,6 @@
             </div>
         </div>
     </div>
-    <br>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/simulator.js"></script>

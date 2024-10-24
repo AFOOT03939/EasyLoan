@@ -9,6 +9,16 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: 'Poppins', sans-serif;
 }
+#navbar {
+    background-color: rgb(34, 54, 87);
+    position: fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    z-index: 99999;
+}
+.navbar {
+    background-color: #0056b3;
+}
 .navbar-brand {
     font-weight: 700;
 }
