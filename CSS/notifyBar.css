@@ -3,52 +3,50 @@
     --bs-primary-rgb: 34, 54, 87;
 }
 
-#chatButton {
+#notificationBtn {
+    z-index: 1002;
     position: fixed;
-    bottom: 30px;
+    top: 70px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
     font-size: 24px;
     transition: transform 0.3s ease-in-out;
 }
-#chatButton:hover {
-    transform: scale(1.1);
+#notificationBtn:hover {
+    transform: scale(1.3);
     background-color: var(--bs-primary);
 }
-#chatWindow {
+#notificationBar {
     position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 300px;
-    height: 400px;
+    top: 70px;
+    right: 2px;
+    width: 375px;
+    height: 275px;
     background-color: white;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 1001;
     transition: all 0.3s ease-in-out;
     transform: scale(0.1);
     opacity: 0;
 }
-#chatWindow.show {
+#notificationBar.show {
     display: block;
     transform: scale(1);
     opacity: 1;
 }
-#chatHeader {
+#notificationHeader {
     background-color: var(--bs-primary);
     color: white;
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-#chatBody {
+#notificationBody {
     height: 300px;
     overflow-y: auto;
-    padding: 10px;
-}
-#chatInput {
-    border-top: 1px solid #ddd;
     padding: 10px;
 }
